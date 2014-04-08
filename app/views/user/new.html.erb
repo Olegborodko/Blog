@@ -1,3 +1,5 @@
+<%= link_to "на главную", root_url  %>
+<br><br>
 <%= form_for @user, url: {action: "create"} do |f| %> 
     <%= f.label :name, "Имя" %>
     <%= f.text_field :name, class: 'dd' %>

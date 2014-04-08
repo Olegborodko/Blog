@@ -27,8 +27,8 @@ end
   end
 
 def show
-@pub=Publish.where(id: params['id'])
-@publish=Publish.find(params[:id])
+@publish_views=Publish.find(params[:id]) # for publish views
+@publish=[@publish_views, Com.new] #for comments
 end
 
 end

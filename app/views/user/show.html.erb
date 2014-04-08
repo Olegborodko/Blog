@@ -1,16 +1,49 @@
-<%= @publish.user.name %>
+<%= link_to "на главную", root_url  %>
+<br><br>
+<%= @publish_views.user.name %>
 </br></br>
-<%= @publish.title %>
+<%= @publish_views.title %>
 </br></br>
-<%= @publish.body %>
+<%= @publish_views.body %>
 </br></br>
-<%= @publish.created_at %>
+<%= russian_data @publish_views.created_at %>
 
 <% if current_user  %>
-<% if current_user.id==@publish.user_id %>
+<% if current_user.id==@publish_views.user_id %>
 <br><br>
-<%= link_to "Удалить", @publish , method: :delete %>
-<%= link_to "Редактировать", controller: "publishes", action: "edit", id: @publish.id  %>
+<%= link_to "Удалить пост", @publish_views , method: :delete %>
+<%= link_to "Редактировать пост", controller: "publishes", action: "edit", id: @publish_views.id  %>
 
 <% end %>
 <% end %>
+
+<br>
+<br>
+<br>
+коментарии к посту
+<br>
+<br>
+<!-------------------------------->
+<table border='1'>
+
+<% @publish_views.coms.each do |comment| %>
+<tr>
+<td>
+<%= comment.title %>
+</td>
+<td>
+<%= russian_data comment.created_at %>
+</td>
+<tr>
+<td colspan="2">
+<%= comment.body %>
+</td>
+</tr>
+
+	<% end %>
+</table>
+<br>
+<br>
+добавить комментарий
+<br><br>
+<%= render 'publishes/form' %>

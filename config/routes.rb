@@ -9,5 +9,9 @@ match 'publish/new', to: 'publishes#new', via: :all
 match 'publish/create', to: 'publishes#create', via: :all
 get 'show', to: 'user#show'
 
-resources :publishes
+
+resources :publishes do
+resources :coms #in
+end 
+
 end

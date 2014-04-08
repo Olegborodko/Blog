@@ -1,6 +1,6 @@
 	# -*- coding: utf-8 -*-
 class User < ActiveRecord::Base
-	has_secure_password
+has_secure_password
 	validates_presence_of :name, :password, :password_confirmation, :email, message: "не должен быть пустой"
 	validates :email, :format => {with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, message: "не верный формат" }, :uniqueness => true
 	

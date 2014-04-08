@@ -8,6 +8,7 @@
     <%= f.label :body, "Текст" %>
     </br>
     <%= f.text_area :body, class: 'dd', size: "30x6" %>
+    <%= hidden_field_tag(:id, params[:id]) %>
     </br>
   <%= f.submit %>
 <% end %>
