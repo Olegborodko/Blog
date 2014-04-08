@@ -1,0 +1,43 @@
+.field_with_errors{
+	display:inline;
+}
+
+.error{
+	color:red;
+}
+
+a {
+    width: 180px; /* ширина ссылок */
+    color: #303030; /* цвет текста */
+    background:  	#C0C0C0 ; /* фон */
+    text-decoration: none; /* убираем подчеркивание */
+    text-align: center; /* текст по центру */
+    /* border: 1px #000 solid; /* стили рамки вокруг ссылок */
+    padding: 3px 6px 3px 6px; /* внутренние отступы */
+
+    border-radius:6px;
+	-webkit-border-radius:6px;
+	-moz-border-radius:5px;
+	-khtml-border-radius:10px;
+}
+	a:hover {
+    background: #303030;
+    color: #fff; /* фон ссылки под курсором */
+   }
+
+   a.a_post{
+padding: 1px 5px 1px 5px;
+background:  	#6666CC ;
+color: white;
+   }
+
+   a.a_post:hover{
+color: black;
+   }
+
+
+
+table td{
+padding:5px 3px 5px 3px;
+text-align: left;
+   }

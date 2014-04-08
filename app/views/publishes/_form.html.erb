@@ -1,0 +1,21 @@
+
+
+<%= form_for @publish do |f| %> 
+    <%= f.label :title, "Заглавие" %>
+    </br>
+    <%= f.text_field :title, class: 'dd' %>
+    </br>
+    <%= f.label :body, "Текст" %>
+    </br>
+    <%= f.text_area :body, class: 'dd', size: "30x6" %>
+    </br>
+  <%= f.submit %>
+<% end %>
+
+
+<br>
+<% if flash[:notice] %>
+<%= flash[:notice] %>
+<% end %>
+
+

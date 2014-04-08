@@ -1,0 +1,16 @@
+<%= @publish.user.name %>
+</br></br>
+<%= @publish.title %>
+</br></br>
+<%= @publish.body %>
+</br></br>
+<%= @publish.created_at %>
+
+<% if current_user  %>
+<% if current_user.id==@publish.user_id %>
+<br><br>
+<%= link_to "Удалить", @publish , method: :delete %>
+<%= link_to "Редактировать", controller: "publishes", action: "edit", id: @publish.id  %>
+
+<% end %>
+<% end %>

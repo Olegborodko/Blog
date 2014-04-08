@@ -1,0 +1,46 @@
+<%= link_to "Зарегистрироваться", "new", class: 'a_reg' %>
+</br></br>
+
+
+<% if session[:user_id] %>
+Неllo, <%= current_user.name %>
+<%= link_to "Выход", "session/destroy", class: 'a_exit' %>
+</br>
+</br>
+<%= link_to "Добавить пост", "publish/new", class: 'a_add' %>
+</br>
+</br>
+
+
+<% else %>
+
+<%= form_tag(controller: "session", action: "new") do  %>
+<%= label_tag "Email" %>
+<%= text_field_tag 'email', nil, class: 'text' %>
+<%= label_tag "Пароль" %>
+<%= password_field_tag 'password', nil, class: 'text' %>
+<%= submit_tag "Войти" %>
+<% end %>
+
+<% if flash[:error]==true %>
+<span class='error'> не правильный пароль или email </span>
+<% end %>
+
+<% end %>
+
+
+<table>
+<% @pub.each do |b| %>
+<tr>
+<td>
+<%= b.user.name %>
+</td>
+<td>
+<%= link_to b.title, "show" + "?id="+ b.id.to_s ,  class: 'a_post' %>
+</td>
+<td>
+<%= b.created_at %>
+</td>
+</tr>
+<% end %>
+</table>
