@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140408105534) do
+ActiveRecord::Schema.define(version: 20140409123814) do
 
   create_table "coms", force: true do |t|
     t.string   "title"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140408105534) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "publish_id"
+    t.string   "user_name"
   end
 
   create_table "publishes", force: true do |t|

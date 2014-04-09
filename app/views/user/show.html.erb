@@ -1,16 +1,31 @@
 <%= link_to "на главную", root_url  %>
 <br><br>
+<table>
+<tr>
+<td>
 <%= @publish_views.user.name %>
-</br></br>
+</td>
+</tr>
+<tr>
+<td>
 <%= @publish_views.title %>
-</br></br>
+</td>
+</tr>
+<tr>
+<td>
 <%= @publish_views.body %>
-</br></br>
+</td>
+</tr>
+<tr>
+<td>
 <%= russian_data @publish_views.created_at %>
+</td>
+</tr>
+</table>
 
 <% if current_user  %>
 <% if current_user.id==@publish_views.user_id %>
-<br><br>
+<br>
 <%= link_to "Удалить пост", @publish_views , method: :delete %>
 <%= link_to "Редактировать пост", controller: "publishes", action: "edit", id: @publish_views.id  %>
 
@@ -19,23 +34,27 @@
 
 <br>
 <br>
-<br>
-коментарии к посту
-<br>
-<br>
+<center><h5>comment</h5></center>
+
 <!-------------------------------->
-<table border='1'>
+<table>
 
 <% @publish_views.coms.each do |comment| %>
 <tr>
 <td>
-<%= comment.title %>
+<b>title:</b><%= comment.title %>
 </td>
 <td>
+<b>time:</b>
 <%= russian_data comment.created_at %>
 </td>
+<td>
+<b>name:</b>
+<%= comment.user_name %>
+</td>
 <tr>
-<td colspan="2">
+<td colspan="3">
+<b>body:</b>
 <%= comment.body %>
 </td>
 </tr>
@@ -44,6 +63,5 @@
 </table>
 <br>
 <br>
-добавить комментарий
-<br><br>
+<center><h5>add comment</h5></center>
 <%= render 'publishes/form' %>

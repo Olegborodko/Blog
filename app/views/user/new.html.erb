@@ -1,19 +1,47 @@
 <%= link_to "на главную", root_url  %>
 <br><br>
+
+
 <%= form_for @user, url: {action: "create"} do |f| %> 
+<table>
+<tr>
+<td>
     <%= f.label :name, "Имя" %>
+</td>
+<td>
     <%= f.text_field :name, class: 'dd' %>
-    </br>
+</td>
+</tr>
+<tr>
+<td>
     <%= f.label :email, "Email" %>
+</td>
+<td>
     <%= f.text_field :email, class: 'dd' %>
-    </br>
+</td>
+</tr>
+<tr>
+<td>
     <%= f.label :password, "Пароль" %>
+</td>
+<td>
     <%= f.password_field :password, class: 'dd' %>
-    </br>
+ </td>
+</tr>
+<tr>
+<td>
     <%= f.label :password_confirmation, "Еще раз пароль" %>
+</td>
+<td>
     <%= f.password_field :password_confirmation, class: 'dd' %>
-    </br>
+</td>
+</tr>
+<tr>
+<td>
   <%= f.submit "Зарегистрироваться", class: 'batn' %>
+  </td>
+</tr>
+</table>
 <% end %>
 
 

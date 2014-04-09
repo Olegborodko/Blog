@@ -1,16 +1,33 @@
 
-
 <%= form_for @publish do |f| %> 
+<table>
+<tr>
+<td>
     <%= f.label :title, "Заглавие" %>
-    </br>
+ </td>
+</tr>
+<tr>
+<td>
     <%= f.text_field :title, class: 'dd' %>
-    </br>
+</td>
+</tr>
+<tr>
+<td>
     <%= f.label :body, "Текст" %>
-    </br>
-    <%= f.text_area :body, class: 'dd', size: "30x6" %>
+</td>
+</tr>
+<tr>
+<td>
+    <%= f.text_area :body, class: 'body_text' %>
     <%= hidden_field_tag(:id, params[:id]) %>
-    </br>
+</td>
+</tr>
+<tr>
+<td>
   <%= f.submit %>
+  </td>
+</tr>
+</table>
 <% end %>
 
 

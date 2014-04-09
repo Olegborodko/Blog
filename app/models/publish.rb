@@ -7,5 +7,5 @@ validates_presence_of :body, :title, message: "не должен быть пус
 	validates :body, :length => {:maximum => 500}, :format => {with: /[a-zA-Z0-9а-я.,А-Я-?()!_]/ , message: "пишите текст и цифры"}
 
 	belongs_to :user
-	has_many :coms
+	has_many :coms, dependent: :destroy
 end

@@ -27,15 +27,16 @@ class PublishesController < ApplicationController
     def destroy
  
         @publish.destroy
+        
         redirect_to root_url
     end
 
     def update
 
         if @publish.update(publish_params)
-            redirect_to root_url
+          redirect_to root_url
         else
-            redirect_to :back , notice: 'ошибка, пустые поля или превышен максимум символов'
+          redirect_to :back , notice: 'ошибка, пустые поля или превышен максимум символов'
         end
     end
 
