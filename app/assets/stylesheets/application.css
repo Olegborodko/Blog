@@ -33,7 +33,7 @@ border:1px solid rgba(184,243,85,0.3);
   color: #2a2a2a;
   background: #fafafa;  
  
-background-image: -moz-linear-gradient(top, #fff, #eaeaea, #fff); /* Firefox 3.6 */
+background-image: -moz-linear-gradient(top, #fff, #eaeaea, #fff); 
   background-image: -webkit-gradient(linear,center bottom,center top,from(#fff),color-stop(0.5, #eaeaea),to(#fff)); 
    
    border-radius: 20px;
@@ -54,13 +54,13 @@ padding:20px;
 
 
 a {
-    width: 180px; /* ширина ссылок */
-    color: #303030; /* цвет текста */
-    background:   #C0C0C0 ; /* фон */
-    text-decoration: none; /* убираем подчеркивание */
-    text-align: center; /* текст по центру */
-    /* border: 1px #000 solid; /* стили рамки вокруг ссылок */
-    padding: 3px 6px 3px 6px; /* внутренние отступы */
+    width: 180px; 
+    color: #303030; 
+    background:   #C0C0C0 ; 
+    text-decoration: none; 
+    text-align: center; 
+    
+    padding: 3px 6px 3px 6px; 
 
     border-radius:6px;
   -webkit-border-radius:6px;
@@ -70,7 +70,7 @@ a {
 }
   a:hover {
     background: #303030;
-    color: #fff; /* фон ссылки под курсором */
+    color: #fff; 
    }
 
    a.a_post{

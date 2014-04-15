@@ -11,7 +11,7 @@ get 'show', to: 'user#show'
 
 
 resources :publishes do
-resources :coms #in
+resources :coms
 end 
 
 end
